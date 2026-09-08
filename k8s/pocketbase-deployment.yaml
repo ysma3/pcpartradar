@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: pocketbase
-          image: pcpartradar-pocketbase:latest
+          image: ghcr.io/ysma3/pcpartradar-productservice:latest
           ports:
             - containerPort: 8080
           volumeMounts:
-            - name: /pb/pb_data
-              mountPath: pocketbase-data
+            - name: pocketbase-data
+              mountPath: /pb/pb_data
       volumes:
         - name: pocketbase-data
           persistentVolumeClaim:
