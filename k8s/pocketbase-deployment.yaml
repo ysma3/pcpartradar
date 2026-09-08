@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pocketbase-deployment
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: pocketbase
+
+  template:
+    metadata:
+      labels:
+        app: pocketbase
+    spec:
+      containers:
+        - name: pocketbase
+          image: pcpartradar-pocketbase:latest
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: /pb/pb_data
+              mountPath: pocketbase-data
+      volumes:
+        - name: pocketbase-data
+          persistentVolumeClaim:
+            claimName: pocketbase-data
