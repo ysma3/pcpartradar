@@ -8,10 +8,11 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - pcpartradar.com
+        - api.pcpartradar.com
       secretName: pcpartradar-tls
   rules:
-    - http:
+    - host: api.pcpartradar.com
+      http:
         paths:
           - path: /
             pathType: Prefix

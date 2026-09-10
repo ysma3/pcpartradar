@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: scraper-job
+spec:
+  backoffLimit: 1
+  template:
+    spec:
+      containers:
+        - name: scraper
+          image: ghcr.io/ysma3/pcpartradar-scraperservice:latest
+          env:
+            - name: POCKETBASE_URL
+              value: "http://pocketbase:8080"
+            - name: POCKETBASE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: scraper-secret
+                  key: POCKETBASE_TOKEN
+      restartPolicy: Never
