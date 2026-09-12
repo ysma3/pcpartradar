@@ -46,6 +46,15 @@ export async function fetchAPI<T>(endpoint: string, method: string = "GET", body
   return res.json();
 }
 
+export async function checkAPI(): Promise<boolean> {
+  try {
+    const response = await fetch(`${API_HOST}/api/health`);
+    return response.ok;
+  } catch (e) {
+    return false;
+  }
+}
+
 export async function fetchProducts(): Promise<ProductList> {
   return await fetchAPI<ProductList>("collections/products/records");
 }
@@ -58,7 +67,7 @@ export async function fetchPriceHistory(
   productId: string
 ): Promise<PriceHistoryList> {
   return fetchAPI<PriceHistoryList>(
-    `collections/price_history/records?filter=(product='${productId}')&fields=id,product,price,created`
+    `collections/price_history/records?filter=(product='${productId}')&fields=id,product,price,created&sort=-created`
   );
 }
 
