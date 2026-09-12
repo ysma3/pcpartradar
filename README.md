@@ -4,14 +4,16 @@ This project aims to gain hands-on experience with multiple DevOps tools through
 
 ## V1 - Deployment of the MVP
 
-- [x] Develop and package **productservice (API)** and **scraperservice**
-- [x] Set up an automatic build pipeline with Github Actions
-- [x] Configure the AWS VPC
-- [x] Deploy an EC2 instance and install a single-node K3s cluster
-- [x] Assign an Elastic IP and configure Security Group on the instance
-- [x] Deploy the API using a Deployment
-- [x] Configure a Service and an Ingress with Traefik to expose the API
-- [x] Use a domain name managed through Cloudflare
-- [x] Schedule product scraping using a CronJob
-- [x] Enable HTTPS with Traefik and cert-manager
-- [ ] Develop a minimal frontend deployed with S3 and CloudFront
+- [x] Develop the product API and scraper service
+- [x] Containerize the application with Dockerfile
+- [x] Set up CI with Github Actions
+- [x] Provision AWS VPC and EC2 instance with fixed Elastic IP and Security Group
+- [x] Deploy a single-node K3s cluster
+- [x] Deploy the API and scraper with Kubernetes
+- [x] Schedule scraping with a Kubernetes CronJob
+- [x] Expose the API through Traefik
+- [x] Configure a domain name with Cloudflare
+- [x] Enable HTTPS with cert-manager and Let's Encrypt
+- [x] Develop a frontend with React
+- [x] Deploy the frontend with S3 and CloudFront
+- [x] Automate frontend deployment CI/CD with Github Actions and AWS OIDC
