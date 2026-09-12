@@ -1,4 +1,4 @@
-# PCPartRadar - Microservice powered price comparator
+# PCPartRadar - Microservice-based Price Comparator
 
 This project aims to gain hands-on experience with multiple DevOps tools through a concrete project.
 
