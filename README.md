@@ -17,3 +17,10 @@ This project aims to gain hands-on experience with multiple DevOps tools through
 - [x] Develop a frontend with React
 - [x] Deploy the frontend with S3 and CloudFront
 - [x] Automate frontend deployment CI/CD with Github Actions and AWS OIDC
+
+
+## V2 - Infrastructure as Code
+
+- [ ] Provision the infrastructure on AWS using Terraform
+- [ ] Automate cluster configuration using Ansible
+- [ ] Enhance frontend interface (maybe switch to shadcn)
